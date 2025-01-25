@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Recommended Laptop</h1>
+        </header>
+        <p>The recommended laptop (Company + Product) according to your requirements is:</p>
+        <h2>{{ recommendation }}</h2>
+        <a href="/" class="btn-back">Get Another Recommendation</a>
+    </div>
+</body>
+</html>

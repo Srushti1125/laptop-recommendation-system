@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laptop Recommendation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Laptop Recommendation System</h1>
+        </header>
+        <form id="predictForm" method="POST" action="/predict">
+            <div class="form-group">
+                <label for="TypeName">Laptop Type:</label>
+                <select name="TypeName" id="TypeName" required>
+                    <option value="" disabled selected>Select Type</option>
+                    {% for option in options['TypeName'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Inches">Screen Size (Inches):</label>
+                <input type="number" name="Inches" id="Inches" step="0.1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ScreenResolution">Screen Resolution:</label>
+                <select name="ScreenResolution" id="ScreenResolution" required>
+                    <option value="" disabled selected>Select Resolution</option>
+                    {% for option in options['ScreenResolution'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Cpu_Model">CPU Model:</label>
+                <select name="Cpu_Model" id="Cpu_Model" required>
+                    <option value="" disabled selected>Select CPU Model</option>
+                    {% for option in options['Cpu_Model'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Cpu_Speed">CPU Speed (GHz):</label>
+                <select name="Cpu_Speed" id="Cpu_Speed" required>
+                    <option value="" disabled selected>Select CPU Speed</option>
+                    {% for option in options['Cpu_Speed'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Ram">RAM (GB):</label>
+                <input type="number" name="Ram" id="Ram" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Memory_Size">Memory Size (GB):</label>
+                <select name="Memory_Size" id="Memory_Size" required>
+                    <option value="" disabled selected>Select Memory Size</option>
+                    {% for option in options['Memory_Size'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Memory_Type">Memory Type:</label>
+                <select name="Memory_Type" id="Memory_Type" required>
+                    <option value="" disabled selected>Select Memory Type</option>
+                    {% for option in options['Memory_Type'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Gpu">GPU:</label>
+                <select name="Gpu" id="Gpu" required>
+                    <option value="" disabled selected>Select GPU</option>
+                    {% for option in options['Gpu'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="OpSys">Operating System:</label>
+                <select name="OpSys" id="OpSys" required>
+                    <option value="" disabled selected>Select OS</option>
+                    {% for option in options['OpSys'] %}
+                        <option value="{{ option }}">{{ option }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="Weight">Weight (kg):</label>
+                <input type="number" name="Weight" id="Weight" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Price_euros">Price (Euros):</label>
+                <input type="number" name="Price_euros" id="Price_euros" step="0.01" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Get Laptop Recommendation</button>
+        </form>
+    </div>
+</body>
+</html>
