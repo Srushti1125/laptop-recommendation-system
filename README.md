@@ -10,7 +10,7 @@ The tool is powered by machine learning algorithms that process user input and p
 - Custom Filters: Fine-tune recommendations with additional criteria.
 
 **Technologies Used**
-- Frontend: HTML, CSS, JavaScript (or React.js for dynamic UI)
+- Frontend: HTML, CSS
 - Backend: Python (Flask)
 - Machine Learning: scikit-learn, pandas, numpy
 - Database: MySQL
